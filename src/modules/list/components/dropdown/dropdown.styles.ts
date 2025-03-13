@@ -6,6 +6,8 @@ export const Li =  styled.li`
     padding: 4px 0 16px 0;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
 `;
 
 export const Ul =  styled.ul`
