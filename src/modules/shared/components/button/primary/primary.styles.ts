@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const PrimaryButton =  styled.button`
     font-weight: ${({ theme }) => theme.typography.body.large.weight.semiBold};
     line-height: ${({ theme }) => theme.typography.body.large.lineHeight};
