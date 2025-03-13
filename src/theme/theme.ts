@@ -42,7 +42,7 @@ export const dwsBLogTheme: theme = {
             medium: '#d31450',
             dark: '#8c1038',
         },
-        accent: {
+        accent1: {
             light: '#00bfc1',
             medium: '#009598',
             dark: '#006c6e',

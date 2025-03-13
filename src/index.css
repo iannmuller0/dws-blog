@@ -25,11 +25,8 @@ button {
 	padding: 12px;
 	border: 1px solid transparent;
 	cursor: pointer;
+	height: fit-content;
 	transition: border-color 0.25s;
-}
-button:focus,
-button:focus-visible {
-	outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {

@@ -38,7 +38,7 @@ export interface theme {
             medium: string,
             dark: string,
         },
-        accent: {
+        accent1: {
             light: string,
             medium: string,
             dark: string,
