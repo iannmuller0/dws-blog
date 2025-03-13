@@ -18,6 +18,7 @@ export const Info = styled.span`
     font-weight: ${({ theme }) => theme.typography.caption.weight.regular};
     font-size: ${({ theme }) => convertPXToREM(theme.typography.caption.size)};
     line-height: ${({ theme }) => theme.typography.caption.lineHeight};
+    color: ${({theme}) => theme.colors.neutral.extraDark}
 `;
 
 export const Title = styled.h3`
@@ -41,3 +42,14 @@ export const Description = styled.h3`
 export const Container = styled.div`
     margin: 16px;
 `;
+
+export const Dot = styled.div`
+    height: 5px;
+    width: 5px;
+    margin: 1px 6px;
+    background-color: ${({ theme }) => theme.colors.secondary.medium};
+    border-radius: 50%;
+    display: inline-block;
+`;
+
+  

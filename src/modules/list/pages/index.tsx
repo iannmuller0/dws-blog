@@ -9,7 +9,6 @@ import type { IPost } from "./interface";
 const List = () => {
 	const [isExpanded, setIsExpanded] = useState<boolean>(false);
 	const { data, isLoading, isError } = useGetList();
-	console.log(data, "hmmmmmm");
 
 	const items = [
 		{ label: "Item 1", onClick: () => console.log("Item 1 clicked") },
