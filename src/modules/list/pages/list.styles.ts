@@ -1,19 +1,19 @@
-import styled  from "styled-components";
+import styled from "styled-components";
 import convertPXToREM from "../../shared/utils/convertPxToRem";
 
-interface IconContainer {
-    isExpanded: boolean
+interface IconHeader {
+	isExpanded: boolean;
 }
 
-export const Container = styled.div<IconContainer>`
+export const Header = styled.div<IconHeader>`
     display: flex;
     align-items: baseline;
     margin: 8px 0;
 `;
 
-export const ContainerText = styled(Container)<IconContainer>`
+export const HeaderText = styled(Header)<IconHeader>`
     h1,h2 {
-        display: ${({isExpanded}) => isExpanded ? 'none' : 'block'};
+        display: ${({ isExpanded }) => (isExpanded ? "none" : "block")};
         white-space: nowrap;
     }
     h1 {
@@ -28,7 +28,7 @@ export const H2 = styled.h2`
 `;
 
 export const Hr = styled.hr`
-    background: ${({theme}) => theme.colors.neutral.light};
+    background: ${({ theme }) => theme.colors.neutral.light};
 	border: 0;
     margin: 0 -6px 16px -6px;
     height: 1px;
@@ -36,4 +36,9 @@ export const Hr = styled.hr`
 
 export const FlexWrapper = styled.div`
     display: flex;
+`;
+
+export const Container = styled.div`
+    display: flex;
+    flex-direction: column;
 `;

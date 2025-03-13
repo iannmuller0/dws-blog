@@ -21,31 +21,59 @@ export const dwsBLogTheme: theme = {
 				},
 			},
 		},
+		caption: {
+			size: 12,
+			lineHeight: "130%",
+			weight: {
+				regular: 400,
+			},
+		},
+		h1: {
+			size: 56,
+			lineHeight: "130%",
+			weight: {
+				Bold: 700,
+			},
+		},
+		h2: {
+			size: 36,
+			lineHeight: "130%",
+			weight: {
+				Bold: 700,
+			},
+		},
+		h3: {
+			size: 20,
+			lineHeight: "130%",
+			weight: {
+				Bold: 700,
+			},
+		},
 	},
-    colors: {
-        neutral: {
-            lightest: '#f0f0f2',
-            extraLight: '#e0e2e6',
-            light: '#c0c2c8',
-            medium: '#9ea0a5',
-            dark: '#7f8185',
-            extraDark: '#5e5f63',
-            darkest: '#202122',
-        },
-        primary: {
-            light: '#0b0e3a',
-            medium: '#060725',
-            dark: '#020318',
-        },
-        secondary: {
-            light: '#ef4c84',
-            medium: '#d31450',
-            dark: '#8c1038',
-        },
-        accent1: {
-            light: '#00bfc1',
-            medium: '#009598',
-            dark: '#006c6e',
-        }
-    }
+	colors: {
+		neutral: {
+			lightest: "#f0f0f2",
+			extraLight: "#e0e2e6",
+			light: "#c0c2c8",
+			medium: "#9ea0a5",
+			dark: "#7f8185",
+			extraDark: "#5e5f63",
+			darkest: "#202122",
+		},
+		primary: {
+			light: "#0b0e3a",
+			medium: "#060725",
+			dark: "#020318",
+		},
+		secondary: {
+			light: "#ef4c84",
+			medium: "#d31450",
+			dark: "#8c1038",
+		},
+		accent1: {
+			light: "#00bfc1",
+			medium: "#009598",
+			dark: "#006c6e",
+		},
+	},
 };

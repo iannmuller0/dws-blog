@@ -2,9 +2,9 @@ import type React from "react";
 import { useState } from "react";
 import SvgSearch from "../../../../assets/icons/search";
 import { Wrapper, IconContainer, ExpandedInput, InputWrapper } from "./search.styles";
-import type { SearchMobProps } from "./interface";
+import type { ISearchMobProps } from "./interface";
 
-const SearchMob: React.FC<SearchMobProps> = ({ onSearch, setIsExpanded, isExpanded }) => {
+const SearchMob: React.FC<ISearchMobProps> = ({ onSearch, setIsExpanded, isExpanded }) => {
 	const [query, setQuery] = useState<string>("");
 
 
