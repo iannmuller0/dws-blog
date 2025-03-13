@@ -51,7 +51,6 @@ export const Header = styled.button`
     &:hover {
         background: rgba(211, 20, 80, 0.5);
         color: ${({ theme }) => theme.colors.secondary.medium};
-        opacity: 0.5;
     }
 `;
 
