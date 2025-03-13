@@ -1,11 +1,6 @@
 :root {
 	font-family: 'Open Sans', sans-serif;
-	line-height: 1.5;
-
 	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
-
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -27,6 +22,7 @@ button {
 	cursor: pointer;
 	height: fit-content;
 	transition: border-color 0.25s;
+	border-radius: 42px;
 }
 
 @media (prefers-color-scheme: light) {

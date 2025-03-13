@@ -14,7 +14,7 @@ export const Sort = styled.button`
         color: ${({ theme }) => theme.colors.neutral.extraLight};
         background: ${({ theme }) => theme.colors.accent1.medium};
 
-        svg: {
+        svg {
             color: ${({ theme }) => theme.colors.neutral.extraLight};
         }
 
