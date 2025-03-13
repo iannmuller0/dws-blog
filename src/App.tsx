@@ -1,11 +1,9 @@
 import "./App.css";
-import Search from "./modules/shared/components/search";
+import List from "./modules/list/pages";
 
 function App() {
 	return (
-		<div>
-			<Search onSearch={() => {}} />
-		</div>
+		<List />
 	);
 }
 

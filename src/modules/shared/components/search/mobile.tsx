@@ -1,12 +1,12 @@
 import type React from "react";
 import { useState } from "react";
 import SvgSearch from "../../../../assets/icons/search";
-import { Wrapper, IconContainer } from "./search.styles";
-import type { SearchProps } from "./interface";
+import { Wrapper, IconContainer, ExpandedInput, InputWrapper } from "./search.styles";
+import type { SearchMobProps } from "./interface";
 
-const SearchMob: React.FC<SearchProps> = ({ onSearch }) => {
+const SearchMob: React.FC<SearchMobProps> = ({ onSearch, setIsExpanded, isExpanded }) => {
 	const [query, setQuery] = useState<string>("");
-	const [isInputVisible, setIsInputVisible] = useState<boolean>(false);
+
 
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setQuery(event.target.value);
@@ -16,7 +16,7 @@ const SearchMob: React.FC<SearchProps> = ({ onSearch }) => {
 		event: React.MouseEvent<HTMLDivElement, MouseEvent>,
 	) => {
 		event.preventDefault();
-		setIsInputVisible(true);
+		setIsExpanded(true);
 	};
 
 	const handleSubmit = (
@@ -26,19 +26,26 @@ const SearchMob: React.FC<SearchProps> = ({ onSearch }) => {
 		onSearch(query);
 	};
 
+
+	const handleBlur = () => {
+		setIsExpanded(false);
+	};
+
 	return (
-		<Wrapper onClick={handleSubmit}>
-			{isInputVisible && (
-				<Wrapper>
-					<input
+		<Wrapper>
+			{isExpanded ? (
+				<InputWrapper>
+					<ExpandedInput
 						name="search"
 						type="text"
 						value={query}
 						onChange={handleInputChange}
+						autoFocus
+						placeholder="Search..."
+						onBlur={handleBlur}
 					/>
-				</Wrapper>
-			)}
-			{!isInputVisible && (
+				</InputWrapper>
+			) : (
 				<IconContainer onClick={handleIconClick}>
 					<SvgSearch />
 				</IconContainer>
