@@ -5,7 +5,7 @@ import useScreenSize from "../../../shared/utils/useBreakpoint";
 const FilterMob = React.lazy(() => import("./mobile"));
 const FilterDesk = React.lazy(() => import("./desktop"));
 
-export const Search: React.FC<IFilter> = ({ categoryList, authorList }) => {
+export const Filter: React.FC<IFilter> = ({ categoryList, authorList }) => {
 	const isMobile = useScreenSize();
 
 	return isMobile ? (

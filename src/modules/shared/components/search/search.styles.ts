@@ -1,8 +1,41 @@
 import styled from "styled-components";
 
+export const InputDeskContainer = styled.div`
+    display: flex;
+	width: 100%;
+`;
+
 export const Wrapper = styled.div`
     display: flex;
 	width: 100%;
+
+    input {
+		width: 90%;
+	    color: ${({ theme }) => theme.colors.neutral.extraDark};
+        border: 1px solid ${({ theme }) => theme.colors.neutral.extraLight};
+        padding: 8px 8px 8px 16px;
+        border-radius: 25px;
+     
+        &:hover {
+           border: 1px solid ${({ theme }) => theme.colors.accent1.medium};
+            border-radius: 25px;
+        }
+
+        &:focus {
+            outline: ${({ theme }) => theme.colors.accent1.medium};
+        }
+	}
+        
+    @media (min-width: 1024px) {
+	    width: 30%;
+        position: relative;
+
+        input {
+            width: 100%;
+            padding: 12px 12px 12px 16px;
+        }
+    }
+
 `;
 
 export const InputWrapper = styled.div`
@@ -39,8 +72,16 @@ export const IconContainer = styled.div`
     svg {
         stroke: white;
     }
-`;
+    
+    @media (min-width: 1024px) {
+        margin-left: 0;
+        position: absolute;
+        right: 6px;
+        bottom: 6px;
+        top: 6px;
+    }
 
+`;
 
 export const ExpandedInput = styled.input`
 	width: 100%;

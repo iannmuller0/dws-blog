@@ -9,6 +9,10 @@ export const Header = styled.div<IconHeader>`
     display: flex;
     align-items: baseline;
     margin: 8px 0;
+
+    @media (min-width: 1024px) {
+        width: 100%;
+    }
 `;
 
 export const HeaderText = styled(Header)<IconHeader>`
@@ -19,6 +23,10 @@ export const HeaderText = styled(Header)<IconHeader>`
     h1 {
         margin: 0;
     }
+
+    @media (min-width: 1024px) {
+        width: 70%;
+    }
 `;
 
 export const H2 = styled.h2`
@@ -28,10 +36,15 @@ export const H2 = styled.h2`
 `;
 
 export const Hr = styled.hr`
-    background: ${({ theme }) => theme.colors.neutral.light};
+    background: ${({ theme }) => theme.colors.neutral.extraLight};
 	border: 0;
     margin: 0 -6px 16px -6px;
     height: 1px;
+
+    @media (min-width: 1024px) {
+        margin: 0 -16px 16px -16px;
+    }
+    
 `;
 
 export const FlexWrapper = styled.div`

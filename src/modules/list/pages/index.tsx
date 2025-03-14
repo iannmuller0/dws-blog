@@ -1,27 +1,18 @@
 import { useState } from "react";
-import {
-	Header,
-	HeaderText,
-	H2,
-	Hr,
-	FlexWrapper,
-	Container,
-} from "./list.styles";
-import Dropdown from "../components/dropdown/dropdown";
-import { Sort, Search } from "../../shared/components";
+import { Header, HeaderText, H2, Hr, Container } from "./list.styles";
+import { Search } from "../../shared/components";
 import useGetPostList from "../../shared/services/useGetPostList";
 import Card from "../../shared/components/card";
 import type { IPost } from "./interface";
 import useGetCategoryList from "../services/useGetCategoryList";
 import useGetAuthorList from "../services/authorList/useGetAuthorList";
-import useScreenSize from "../../shared/utils/useBreakpoint";
+import { Filter } from "../components/filter";
 
 const List = () => {
 	const [isExpanded, setIsExpanded] = useState<boolean>(false);
 	const { data: postList, isLoading, isError } = useGetPostList();
 	const { data: categoryList } = useGetCategoryList();
 	const { data: authorList } = useGetAuthorList();
-	const isMobile = useScreenSize();
 
 	return (
 		<>
@@ -37,13 +28,7 @@ const List = () => {
 				/>
 			</Header>
 			<Hr />
-			{isMobile && (
-				<FlexWrapper>
-					<Dropdown items={categoryList}>Category</Dropdown>
-					<Dropdown items={authorList}>Autor</Dropdown>
-					<Sort>Newest first</Sort>
-				</FlexWrapper>
-			)}
+			<Filter categoryList={categoryList} authorList={authorList} />
 			<Container>
 				{postList.map((post: IPost) => (
 					<Card
