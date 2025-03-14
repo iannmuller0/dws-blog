@@ -38,6 +38,7 @@ const SearchMob: React.FC<ISearchMobProps> = ({ onSearch, setIsExpanded, isExpan
 					<ExpandedInput
 						name="search"
 						type="text"
+						aria-label="Search input"
 						value={query}
 						onChange={handleInputChange}
 						autoFocus

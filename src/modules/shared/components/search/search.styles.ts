@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
-export const InputDeskContainer = styled.div`
-    display: flex;
-	width: 100%;
-`;
-
 export const Wrapper = styled.div`
     display: flex;
 	width: 100%;
+
+    form {
+        width: 100%;
+    }
 
     input {
 		width: 90%;
@@ -21,6 +20,10 @@ export const Wrapper = styled.div`
             border-radius: 25px;
         }
 
+        &:active {
+            outline: ${({ theme }) => theme.colors.accent1.medium};
+        }
+
         &:focus {
             outline: ${({ theme }) => theme.colors.accent1.medium};
         }
@@ -31,7 +34,7 @@ export const Wrapper = styled.div`
         position: relative;
 
         input {
-            width: 100%;
+            width: -webkit-fill-available;
             padding: 12px 12px 12px 16px;
         }
     }

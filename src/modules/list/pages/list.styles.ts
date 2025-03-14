@@ -56,9 +56,13 @@ export const Container = styled.div`
     flex-direction: column;
 
     @media (min-width: 1024px) {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        padding: 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 14px;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 16px;
+        padding: 0 0 0 20px;
     }
 `;

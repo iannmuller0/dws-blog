@@ -8,17 +8,17 @@ const FilterCard = ({ categoryList, authorList }: IFilter) => {
 			<Title>Filters</Title>
 			<SubTitle>Category</SubTitle>
 			{categoryList.map((category) => (
-				<>
-					<Item key={category.id}>{category.name}</Item>
-					<Hr key={category.id} />
-				</>
+				<div key={category.id}>
+					<Item>{category.name}</Item>
+					<Hr />
+				</div>
 			))}
 			<SubTitle>Author</SubTitle>
 			{authorList.map((author) => (
-				<>
-					<Item key={author.id}>{removeName(author.name)}</Item>
-					<Hr key={author.id} />
-				</>
+				<div key={author.id}>
+					<Item>{removeName(author.name)}</Item>
+					<Hr />
+				</div>
 			))}
 		</Card>
 	);

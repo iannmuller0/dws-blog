@@ -54,7 +54,8 @@ export const Item = styled.div`
     margin: 8px 0;
     border-radius: 8px;
     padding: 12px 8px;
-
+    cursor: pointer;
+    
     &:hover {
         color: ${({theme}) => theme.colors.accent1.dark};
         border: 1px solid ${({theme}) => theme.colors.neutral.extraLight};

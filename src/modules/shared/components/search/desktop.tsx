@@ -1,7 +1,7 @@
 import type React from "react";
 import { useState } from "react";
 import SvgSearch from "../../../../assets/icons/search";
-import { Wrapper, IconContainer, InputDeskContainer } from "./search.styles";
+import { Wrapper, IconContainer } from "./search.styles";
 import type { ISearchProps } from "./interface";
 
 const SearchDesk: React.FC<ISearchProps> = ({ onSearch }) => {
@@ -11,27 +11,26 @@ const SearchDesk: React.FC<ISearchProps> = ({ onSearch }) => {
 		setQuery(event.target.value);
 	};
 
-	const handleSubmit = (
-		event: React.MouseEvent<HTMLDivElement, MouseEvent>,
-	) => {
+	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		onSearch(query);
+		onSearch(query.trim());
 	};
 
 	return (
 		<Wrapper>
-			<InputDeskContainer>
+			<form onSubmit={handleSubmit}>
 				<input
 					name="search"
 					type="text"
 					value={query}
 					onChange={handleInputChange}
 					placeholder="Search"
+					aria-label="Search input"
 				/>
-			</InputDeskContainer>
-			<IconContainer onClick={handleSubmit}>
-				<SvgSearch />
-			</IconContainer>
+				<IconContainer as="button" type="submit" aria-label="Perform search">
+					<SvgSearch />
+				</IconContainer>
+			</form>
 		</Wrapper>
 	);
 };

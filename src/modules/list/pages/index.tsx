@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
 	Header,
 	HeaderText,
@@ -18,11 +18,30 @@ import FilterCard from "../components/filter/filterCard";
 import useScreenSize from "../../shared/utils/useBreakpoint";
 
 const List = () => {
-	const [isExpanded, setIsExpanded] = useState<boolean>(false);
 	const { data: postList, isLoading, isError } = useGetPostList();
 	const { data: categoryList } = useGetCategoryList();
 	const { data: authorList } = useGetAuthorList();
 	const isMobile = useScreenSize();
+
+	const [isExpanded, setIsExpanded] = useState<boolean>(false);
+	const [posts, setPosts] = useState(postList);
+
+	//adicionar suspense e tratamento de erro
+	console.log(isLoading, isError);
+
+	useEffect(() => {
+		setPosts(postList);
+	}, [postList]);
+
+	//adicionar tela not found
+
+	const handleSearch = (value: string) => {
+		const searchTerm = value.toLowerCase().trim();
+		const filteredList = postList.filter((post: IPost) =>
+			post.title.toLowerCase().includes(searchTerm),
+		);
+		setPosts(filteredList);
+	};
 
 	return (
 		<>
@@ -34,7 +53,7 @@ const List = () => {
 				<Search
 					isExpanded={isExpanded}
 					setIsExpanded={setIsExpanded}
-					onSearch={() => {}}
+					onSearch={handleSearch}
 				/>
 			</Header>
 			<Hr />
@@ -44,7 +63,7 @@ const List = () => {
 					<FilterCard categoryList={categoryList} authorList={authorList} />
 				)}
 				<Container>
-					{postList.map((post: IPost) => (
+					{posts?.map((post: IPost) => (
 						<Card
 							key={post.id}
 							img={post.thumbnail_url}
