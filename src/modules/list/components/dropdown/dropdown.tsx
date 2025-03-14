@@ -27,14 +27,13 @@ const Dropdown = ({ children, items }: IDropdownProps) => {
 		};
 	}, [handleClickOutside]);
 
-	const handleItemClick = (name: string, onClick: () => void) => {
+	const handleItemClick = (name: string) => {
 		if (selectedItems.includes(name)) {
 			const newSelected = selectedItems.filter((item) => item !== name);
 			setSelectedItems(newSelected);
 		} else {
 			setSelectedItems([...selectedItems, name]);
 		}
-		onClick();
 	};
 
 	const handleHeaderIcon = () => {
@@ -61,10 +60,7 @@ const Dropdown = ({ children, items }: IDropdownProps) => {
 			{isOpen && (
 				<Ul>
 					{items?.map((item) => (
-						<Li
-							key={item.id}
-							onClick={() => handleItemClick(item.name, item.onClick)}
-						>
+						<Li key={item.id} onClick={() => handleItemClick(item.name)}>
 							{item.name}
 						</Li>
 					))}

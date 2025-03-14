@@ -67,17 +67,16 @@ const List = () => {
 			}
 
 			const filteredPosts = postList.filter((post: IPost) => {
-				const matchesCategories = hasCategoryFilter
-					? post.categories.some((categorie) =>
-							categoryList.includes(categorie.id),
+				const categoryMatch = hasCategoryFilter
+					? post.categories.some((category) =>
+							categoryList.includes(category.id),
 						)
-					: false;
+					: true;
 
-				const matchesAuthor = hasAuthorFilter
+				const authorMatch = hasAuthorFilter
 					? authorList.includes(post.author.id)
-					: false;
-
-				return matchesCategories || matchesAuthor;
+					: true;
+				return categoryMatch && authorMatch;
 			});
 
 			setPosts(filteredPosts);
