@@ -52,13 +52,15 @@ const Dropdown = ({ children, items }: IDropdownProps) => {
 	return (
 		<div ref={dropdownRef}>
 			<Header type="button" onClick={toggleDropdown}>
-				<span>{selectedItems.length > 0 ? selectedItems.join(", ") : children}</span>
+				<span>
+					{selectedItems.length > 0 ? selectedItems.join(", ") : children}
+				</span>
 				{handleHeaderIcon()}
 			</Header>
 
 			{isOpen && (
 				<Ul>
-					{items.map((item) => (
+					{items?.map((item) => (
 						<Li
 							key={item.id}
 							onClick={() => handleItemClick(item.name, item.onClick)}

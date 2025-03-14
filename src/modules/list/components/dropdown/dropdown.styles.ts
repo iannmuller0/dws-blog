@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import type { IIconWrapper } from './interface';
-import convertPXToVW from '../../../shared/utils/convertPxToVw';
-import convertPXToREM from '../../../shared/utils/convertPxToRem';
+import styled from "styled-components";
+import type { IIconWrapper } from "./interface";
+import convertPXToVW from "../../../shared/utils/convertPxToVw";
+import convertPXToREM from "../../../shared/utils/convertPxToRem";
 
-export const Li =  styled.li`
+export const Li = styled.li`
     row-gap: 8px;
     padding: 8px 0;
     border-radius: 4px;
@@ -12,7 +12,7 @@ export const Li =  styled.li`
     line-height: 20px;
 `;
 
-export const Ul =  styled.ul`
+export const Ul = styled.ul`
    background: #EFEFF2;
    min-width: ${convertPXToVW(314)};
    padding: 16px;
@@ -59,5 +59,5 @@ export const Header = styled.button`
 `;
 
 export const IconWrapper = styled.div<IIconWrapper>`
-    transform:${({ isOpen }) => isOpen && 'rotate(180deg)'};
+    transform:${({ isOpen }) => isOpen && "rotate(180deg)"};
 `;

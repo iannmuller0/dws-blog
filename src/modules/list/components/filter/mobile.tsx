@@ -3,12 +3,12 @@ import Dropdown from "../dropdown/dropdown";
 import { Sort } from "../../../shared/components";
 import type { IFilter } from "./interface";
 
-const FilterMob = ({ categoryList, authorList }: IFilter) => {
+const FilterMob = ({ categoryList, authorList, handleSort }: IFilter) => {
 	return (
 		<FlexWrapper>
 			<Dropdown items={categoryList}>Category</Dropdown>
 			<Dropdown items={authorList}>Autor</Dropdown>
-			<Sort>Newest first</Sort>
+			<Sort handleSort={handleSort} />
 		</FlexWrapper>
 	);
 };

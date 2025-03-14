@@ -35,7 +35,7 @@ export const Wrapper = styled.div`
 
         input {
             width: -webkit-fill-available;
-            padding: 12px 12px 12px 16px;
+            padding: 15px 12px 15px 16px;
         }
     }
 
@@ -64,7 +64,7 @@ export const InputWrapper = styled.div`
 
 export const IconContainer = styled.div`
     background: ${({ theme }) => theme.colors.primary.light};
-    padding: 7px 7px 6px 7px;
+    padding: 9px 9px 8px 9px;
     border-radius: 25px;
 	cursor: pointer;
 	display: flex;

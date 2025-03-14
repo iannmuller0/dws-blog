@@ -6,5 +6,5 @@ export const Wrapper = styled.div`
     text-align: center;
     color:rgb(54, 54, 54);
     width: fit-content;
-    background: ${({theme}) => theme.colors.neutral.lightest};
+    background: ${({ theme }) => theme.colors.neutral.lightest};
 `;

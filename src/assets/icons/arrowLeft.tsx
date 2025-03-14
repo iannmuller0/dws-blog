@@ -1,7 +1,7 @@
 import type { ISvgArrowLeft } from "./interface";
 
 const SvgArrowLeft = ({
-	fill = '#d31450',
+	fill = "#d31450",
 	title = "iconArrowLeft",
 	desc,
 	...props

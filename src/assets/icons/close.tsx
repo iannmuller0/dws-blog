@@ -3,14 +3,14 @@ import type { ISvgArrowLeft } from "./interface";
 const SvgClose = ({
 	title = "iconCloseTitle",
 	desc,
-	fill = '#d31450',
+	fill = "#d31450",
 	...props
 }: ISvgArrowLeft) => {
 	return (
 		<>
 			<svg
-				width='15'
-				height='15'
+				width="15"
+				height="15"
 				viewBox="0 0 24 24"
 				fill={fill}
 				xmlns="http://www.w3.org/2000/svg"

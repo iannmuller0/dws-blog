@@ -1,12 +1,20 @@
 import type React from "react";
 import { useState } from "react";
 import SvgSearch from "../../../../assets/icons/search";
-import { Wrapper, IconContainer, ExpandedInput, InputWrapper } from "./search.styles";
+import {
+	Wrapper,
+	IconContainer,
+	ExpandedInput,
+	InputWrapper,
+} from "./search.styles";
 import type { ISearchMobProps } from "./interface";
 
-const SearchMob: React.FC<ISearchMobProps> = ({ onSearch, setIsExpanded, isExpanded }) => {
+const SearchMob: React.FC<ISearchMobProps> = ({
+	onSearch,
+	setIsExpanded,
+	isExpanded,
+}) => {
 	const [query, setQuery] = useState<string>("");
-
 
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setQuery(event.target.value);
@@ -25,7 +33,6 @@ const SearchMob: React.FC<ISearchMobProps> = ({ onSearch, setIsExpanded, isExpan
 		event.preventDefault();
 		onSearch(query);
 	};
-
 
 	const handleBlur = () => {
 		setIsExpanded(false);

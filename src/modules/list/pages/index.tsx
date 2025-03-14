@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
 	Header,
 	HeaderText,
@@ -34,7 +34,6 @@ const List = () => {
 	}, [postList]);
 
 	//adicionar tela not found
-
 	const handleSearch = (value: string) => {
 		const searchTerm = value.toLowerCase().trim();
 		const filteredList = postList.filter((post: IPost) =>
@@ -42,6 +41,18 @@ const List = () => {
 		);
 		setPosts(filteredList);
 	};
+
+	const handleSort = useCallback(
+		(oldest: boolean) => {
+			return [...postList].sort((a, b) => {
+				const dateA = new Date(a.createdAt).getTime();
+				const dateB = new Date(b.createdAt).getTime();
+
+				return oldest ? dateA - dateB : dateB - dateA;
+			});
+		},
+		[postList],
+	);
 
 	return (
 		<>
@@ -57,7 +68,11 @@ const List = () => {
 				/>
 			</Header>
 			<Hr />
-			<Filter categoryList={categoryList} authorList={authorList} />
+			<Filter
+				handleSort={handleSort}
+				categoryList={categoryList}
+				authorList={authorList}
+			/>
 			<FlexWrapper>
 				{!isMobile && (
 					<FilterCard categoryList={categoryList} authorList={authorList} />

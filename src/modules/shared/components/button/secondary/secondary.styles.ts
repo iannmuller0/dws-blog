@@ -1,7 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-
-export const SecondaryButton =  styled.button`
+export const SecondaryButton = styled.button`
     font-weight: ${({ theme }) => theme.typography.body.large.weight.semiBold};
     line-height: ${({ theme }) => theme.typography.body.large.lineHeight};
     align-items: center;

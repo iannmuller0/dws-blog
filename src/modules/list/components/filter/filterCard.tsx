@@ -7,14 +7,14 @@ const FilterCard = ({ categoryList, authorList }: IFilter) => {
 		<Card>
 			<Title>Filters</Title>
 			<SubTitle>Category</SubTitle>
-			{categoryList.map((category) => (
+			{categoryList?.map((category) => (
 				<div key={category.id}>
 					<Item>{category.name}</Item>
 					<Hr />
 				</div>
 			))}
 			<SubTitle>Author</SubTitle>
-			{authorList.map((author) => (
+			{authorList?.map((author) => (
 				<div key={author.id}>
 					<Item>{removeName(author.name)}</Item>
 					<Hr />

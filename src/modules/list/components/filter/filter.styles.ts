@@ -2,7 +2,7 @@ import styled from "styled-components";
 import convertPXToREM from "../../../shared/utils/convertPxToRem";
 
 export const SortText = styled.span`
-    color: ${({theme}) => theme.colors.neutral.extraDark};
+    color: ${({ theme }) => theme.colors.neutral.extraDark};
     font-weight: bold;
     font-size: ${convertPXToREM(14)};
 `;
@@ -24,9 +24,8 @@ export const Hr = styled.hr`
     height: 1px;    
 `;
 
-
 export const Card = styled.div`
-    border: 1px solid ${({theme}) => theme.colors.neutral.lightest};
+    border: 1px solid ${({ theme }) => theme.colors.neutral.lightest};
     display: flex;
     flex-direction: column;
     min-width: 20%;
@@ -48,22 +47,22 @@ export const SubTitle = styled.span`
 `;
 
 export const Item = styled.div`
-    font-size: ${({theme}) => convertPXToREM(theme.typography.body.small.size)};
-    line-height: ${({theme}) => theme.typography.body.small.lineHeight};
-    font-weight: ${({theme}) => theme.typography.body.small.weight.regular};
+    font-size: ${({ theme }) => convertPXToREM(theme.typography.body.small.size)};
+    line-height: ${({ theme }) => theme.typography.body.small.lineHeight};
+    font-weight: ${({ theme }) => theme.typography.body.small.weight.regular};
     margin: 8px 0;
     border-radius: 8px;
     padding: 12px 8px;
     cursor: pointer;
     
     &:hover {
-        color: ${({theme}) => theme.colors.accent1.dark};
-        border: 1px solid ${({theme}) => theme.colors.neutral.extraLight};
+        color: ${({ theme }) => theme.colors.accent1.dark};
+        border: 1px solid ${({ theme }) => theme.colors.neutral.extraLight};
     }
 
     &:active {
-        color: ${({theme}) => theme.colors.accent1.dark};
-        border: 1px solid ${({theme}) => theme.colors.accent1.dark};
+        color: ${({ theme }) => theme.colors.accent1.dark};
+        border: 1px solid ${({ theme }) => theme.colors.accent1.dark};
         background: rgba(0, 191, 193, 0.5);
     }
 `;

@@ -25,26 +25,26 @@ export interface theme {
 			};
 		};
 		h1: {
-			size: number,
-			lineHeight: string,
+			size: number;
+			lineHeight: string;
 			weight: {
-				Bold: number,
-			},
-		},
+				Bold: number;
+			};
+		};
 		h2: {
-			size: number,
-			lineHeight: string,
+			size: number;
+			lineHeight: string;
 			weight: {
-				Bold: number,
-			},
-		},
+				Bold: number;
+			};
+		};
 		h3: {
-			size: number,
-			lineHeight: string,
+			size: number;
+			lineHeight: string;
 			weight: {
-				Bold: number,
-			},
-		},
+				Bold: number;
+			};
+		};
 	};
 	colors: {
 		neutral: {

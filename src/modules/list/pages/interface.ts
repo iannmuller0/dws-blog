@@ -22,4 +22,4 @@ export interface IPost {
 	thumbnail_url: string;
 	title: string;
 	updatedAt: string;
-};
+}

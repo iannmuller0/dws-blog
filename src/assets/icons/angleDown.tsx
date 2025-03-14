@@ -3,7 +3,7 @@ import type { ISvgArrowLeft } from "./interface";
 const SvgAngleDown = ({
 	title = "iconArrowLeft",
 	desc,
-	fill = '#d31450',
+	fill = "#d31450",
 	...props
 }: ISvgArrowLeft) => {
 	return (

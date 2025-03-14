@@ -9,7 +9,10 @@ const useGetAuthorList = () => {
 	const [isError, setIsError] = useState(false);
 
 	const sanitazeData = useCallback((data: IAuthor[]) => {
-		data.map((author: IAuthor) => ({ ...author, name: removeName(author.name) }));
+		data.map((author: IAuthor) => ({
+			...author,
+			name: removeName(author.name),
+		}));
 	}, []);
 
 	useEffect(() => {
