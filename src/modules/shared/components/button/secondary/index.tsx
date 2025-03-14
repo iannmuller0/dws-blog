@@ -1,5 +1,5 @@
-import { SecondaryButton as Button } from "./secondary.styles";
 import SvgArrowLeft from "../../../../../assets/icons/arrowLeft";
+import { SecondaryButton as Button } from "./secondary.styles";
 
 interface Ibutton {
 	children?: string;

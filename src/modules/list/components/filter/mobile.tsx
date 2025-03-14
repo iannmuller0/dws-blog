@@ -1,6 +1,6 @@
+import { Sort } from "../../../shared/components";
 import { FlexWrapper } from "../../pages/list.styles";
 import Dropdown from "../dropdown/dropdown";
-import { Sort } from "../../../shared/components";
 import type { IFilter } from "./interface";
 
 const FilterMob = ({ categoryList, authorList, handleSort }: IFilter) => {

@@ -1,6 +1,6 @@
 import React from "react";
-import type { ISearchMobProps } from "./interface";
 import useScreenSize from "../../utils/useBreakpoint";
+import type { ISearchMobProps } from "./interface";
 
 const SearchMob = React.lazy(() => import("./mobile"));
 const SearchDesk = React.lazy(() => import("./desktop"));

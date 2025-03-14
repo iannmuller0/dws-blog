@@ -1,5 +1,5 @@
 import removeName from "../../../shared/utils/removeName";
-import { Card, Title, SubTitle, Item, Hr } from "./filter.styles";
+import { Card, Hr, Item, SubTitle, Title } from "./filter.styles";
 import type { IFilter } from "./interface";
 
 const FilterCard = ({ categoryList, authorList }: IFilter) => {

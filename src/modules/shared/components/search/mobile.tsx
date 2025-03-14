@@ -1,13 +1,13 @@
 import type React from "react";
 import { useState } from "react";
 import SvgSearch from "../../../../assets/icons/search";
-import {
-	Wrapper,
-	IconContainer,
-	ExpandedInput,
-	InputWrapper,
-} from "./search.styles";
 import type { ISearchMobProps } from "./interface";
+import {
+	ExpandedInput,
+	IconContainer,
+	InputWrapper,
+	Wrapper,
+} from "./search.styles";
 
 const SearchMob: React.FC<ISearchMobProps> = ({
 	onSearch,

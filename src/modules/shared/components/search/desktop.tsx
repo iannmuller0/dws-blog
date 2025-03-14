@@ -1,8 +1,8 @@
 import type React from "react";
 import { useState } from "react";
 import SvgSearch from "../../../../assets/icons/search";
-import { Wrapper, IconContainer } from "./search.styles";
 import type { ISearchProps } from "./interface";
+import { IconContainer, Wrapper } from "./search.styles";
 
 const SearchDesk: React.FC<ISearchProps> = ({ onSearch }) => {
 	const [query, setQuery] = useState<string>("");

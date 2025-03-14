@@ -1,8 +1,8 @@
-import { useState, useRef, useEffect, useCallback } from "react";
-import type { IDropdownProps } from "./interface";
-import { Header, IconWrapper, Li, Ul } from "./dropdown.styles";
+import { useCallback, useEffect, useRef, useState } from "react";
 import SvgAngleDown from "../../../../assets/icons/angleDown";
 import SvgClose from "../../../../assets/icons/close";
+import { Header, IconWrapper, Li, Ul } from "./dropdown.styles";
+import type { IDropdownProps } from "./interface";
 
 const Dropdown = ({ children, items }: IDropdownProps) => {
 	const [isOpen, setIsOpen] = useState(false);

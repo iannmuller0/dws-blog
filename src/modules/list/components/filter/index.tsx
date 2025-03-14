@@ -1,6 +1,6 @@
 import React from "react";
-import type { IFilter } from "./interface";
 import useScreenSize from "../../../shared/utils/useBreakpoint";
+import type { IFilter } from "./interface";
 
 const FilterMob = React.lazy(() => import("./mobile"));
 const FilterDesk = React.lazy(() => import("./desktop"));

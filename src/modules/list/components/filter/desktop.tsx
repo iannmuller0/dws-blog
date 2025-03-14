@@ -1,5 +1,5 @@
 import { Sort } from "../../../shared/components";
-import { SortText, FlexWrapper, Blog } from "./filter.styles";
+import { Blog, FlexWrapper, SortText } from "./filter.styles";
 import type { IFilter } from "./interface";
 
 const FilterDesk = ({ handleSort }: IFilter) => {

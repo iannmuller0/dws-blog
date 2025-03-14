@@ -1,21 +1,21 @@
 import { useCallback, useEffect, useState } from "react";
-import {
-	Header,
-	HeaderText,
-	H2,
-	Hr,
-	Container,
-	FlexWrapper,
-} from "./list.styles";
 import { Search } from "../../shared/components";
-import useGetPostList from "../../shared/services/useGetPostList";
 import Card from "../../shared/components/card";
-import type { IPost } from "./interface";
-import useGetCategoryList from "../services/useGetCategoryList";
-import useGetAuthorList from "../services/authorList/useGetAuthorList";
+import useGetPostList from "../../shared/services/useGetPostList";
+import useScreenSize from "../../shared/utils/useBreakpoint";
 import { Filter } from "../components/filter";
 import FilterCard from "../components/filter/filterCard";
-import useScreenSize from "../../shared/utils/useBreakpoint";
+import useGetAuthorList from "../services/authorList/useGetAuthorList";
+import useGetCategoryList from "../services/useGetCategoryList";
+import type { IPost } from "./interface";
+import {
+	Container,
+	FlexWrapper,
+	H2,
+	Header,
+	HeaderText,
+	Hr,
+} from "./list.styles";
 
 const List = () => {
 	const { data: postList, isLoading, isError } = useGetPostList();

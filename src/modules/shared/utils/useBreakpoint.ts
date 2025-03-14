@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const useScreenSize = () => {
 	const [isMobile, setIsMobile] = useState<boolean>(false);

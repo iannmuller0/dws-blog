@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import type { IPost } from "../../list/pages/interface";
 
 const useGetPostList = () => {

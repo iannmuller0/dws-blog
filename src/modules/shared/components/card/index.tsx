@@ -1,16 +1,16 @@
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
 import removeName from "../../utils/removeName";
 import {
+	Container,
+	Description,
+	Dot,
 	Info,
 	Title,
-	Description,
 	Wrapper,
-	Container,
-	Dot,
 } from "./card.styles";
 import Tag from "./components/tag/tag";
 import type { ICard } from "./interface";
-import { format } from "date-fns";
-import { ptBR } from "date-fns/locale";
 
 const Card = ({
 	img,

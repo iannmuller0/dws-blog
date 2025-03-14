@@ -1,6 +1,6 @@
 import { useState } from "react";
-import * as S from "./sort.styles";
 import type { IFilter } from "../../../list/components/filter/interface";
+import * as S from "./sort.styles";
 
 export const Sort = ({ handleSort }: IFilter) => {
 	const [oldest, setOldest] = useState<boolean>(false);
