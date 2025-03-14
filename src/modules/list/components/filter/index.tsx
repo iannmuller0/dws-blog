@@ -11,6 +11,6 @@ export const Filter: React.FC<IFilter> = ({ categoryList, authorList }) => {
 	return isMobile ? (
 		<FilterMob categoryList={categoryList} authorList={authorList} />
 	) : (
-		<FilterDesk categoryList={categoryList} authorList={authorList} />
+		<FilterDesk />
 	);
 };

@@ -1,18 +1,14 @@
-import { FlexWrapper } from "../../pages/list.styles";
-import Dropdown from "../dropdown/dropdown";
 import { Sort } from "../../../shared/components";
+import { SortText, FlexWrapper, Blog } from "./filter.styles";
 
-interface IFilter {
-    categoryList: { name: string; id: string; onClick: () => void }[]
-    authorList: { name: string; id: string; onClick: () => void }[]
-};
-
-const FilterDesk = ({ categoryList, authorList }: IFilter) => {
+const FilterDesk = () => {
 	return (
 		<FlexWrapper>
-			<Dropdown items={categoryList}>Category</Dropdown>
-			<Dropdown items={authorList}>Autor</Dropdown>
-			<Sort>Newest first</Sort>
+			<Blog>DWS Blog</Blog>
+			<div>
+				<SortText>Sort by:</SortText>
+				<Sort>Newest first</Sort>
+			</div>
 		</FlexWrapper>
 	);
 };

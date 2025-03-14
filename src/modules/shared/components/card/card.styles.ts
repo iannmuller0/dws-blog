@@ -10,6 +10,10 @@ export const Wrapper = styled.div`
     img {
         width: -webkit-fill-available;
     }
+
+    @media (min-width: 1024px) {
+        margin: 0;
+    }
 `;
 
 export const Info = styled.span`
