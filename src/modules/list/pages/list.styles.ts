@@ -54,4 +54,11 @@ export const FlexWrapper = styled.div`
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
+
+    @media (min-width: 1024px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
 `;
