@@ -1,20 +1,28 @@
 import { useState } from "react";
-import { Header, HeaderText, H2, Hr, FlexWrapper, Container } from "./list.styles";
+import {
+	Header,
+	HeaderText,
+	H2,
+	Hr,
+	FlexWrapper,
+	Container,
+} from "./list.styles";
 import Dropdown from "../components/dropdown/dropdown";
 import { Sort, Search } from "../../shared/components";
-import useGetList from "../../shared/services/useGetList";
+import useGetPostList from "../../shared/services/useGetPostList";
 import Card from "../../shared/components/card";
 import type { IPost } from "./interface";
+import useGetCategoryList from "../services/useGetCategoryList";
+import useGetAuthorList from "../services/authorList/useGetAuthorList";
+import useScreenSize from "../../shared/utils/useBreakpoint";
 
 const List = () => {
 	const [isExpanded, setIsExpanded] = useState<boolean>(false);
-	const { data, isLoading, isError } = useGetList();
+	const { data: postList, isLoading, isError } = useGetPostList();
+	const { data: categoryList } = useGetCategoryList();
+	const { data: authorList } = useGetAuthorList();
+	const isMobile = useScreenSize();
 
-	const items = [
-		{ label: "Item 1", onClick: () => console.log("Item 1 clicked") },
-		{ label: "Item 2", onClick: () => console.log("Item 2 clicked") },
-		{ label: "Item 3", onClick: () => console.log("Item 3 clicked") },
-	];
 	return (
 		<>
 			<Header isExpanded={isExpanded}>
@@ -29,13 +37,15 @@ const List = () => {
 				/>
 			</Header>
 			<Hr />
-			<FlexWrapper>
-				<Dropdown items={items}>Category</Dropdown>
-				<Dropdown items={items}>Autor</Dropdown>
-				<Sort>Newest first</Sort>
-			</FlexWrapper>
+			{isMobile && (
+				<FlexWrapper>
+					<Dropdown items={categoryList}>Category</Dropdown>
+					<Dropdown items={authorList}>Autor</Dropdown>
+					<Sort>Newest first</Sort>
+				</FlexWrapper>
+			)}
 			<Container>
-				{data.map((post: IPost) => (
+				{postList.map((post: IPost) => (
 					<Card
 						key={post.id}
 						img={post.thumbnail_url}

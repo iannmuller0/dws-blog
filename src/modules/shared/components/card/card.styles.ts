@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import convertPXToREM from "../../utils/convertPxToRem";
-import convertPXToVH from "../../utils/convertPxToVh";
 
 export const Wrapper = styled.div`
-    max-height: ${convertPXToVH(425)};
     border-radius: 16px 16px 0 0;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     margin-top: 12px;

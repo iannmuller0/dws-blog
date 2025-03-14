@@ -2,9 +2,9 @@ import type { ReactNode } from "react";
 
 export interface IDropdownProps {
 	children: ReactNode;
-	items: { label: string; onClick: () => void }[];
+	items: { name: string; id: string; onClick: () => void }[];
 }
 
 export interface IIconWrapper {
-    isOpen: boolean;
-  }
+	isOpen: boolean;
+}
