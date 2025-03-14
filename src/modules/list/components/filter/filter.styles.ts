@@ -46,7 +46,7 @@ export const SubTitle = styled.span`
     margin: 16px 0 12px 0;
 `;
 
-export const Item = styled.div`
+export const Item = styled.div<{ selected?: boolean }>`
     font-size: ${({ theme }) => convertPXToREM(theme.typography.body.small.size)};
     line-height: ${({ theme }) => theme.typography.body.small.lineHeight};
     font-weight: ${({ theme }) => theme.typography.body.small.weight.regular};
@@ -54,15 +54,17 @@ export const Item = styled.div`
     border-radius: 8px;
     padding: 12px 8px;
     cursor: pointer;
+
+     ${({ theme, selected }) =>
+				selected &&
+				`
+                    color: ${theme.colors.accent1.dark};
+                    border: 1px solid ${theme.colors.accent1.dark};
+                    background: rgba(0, 191, 193, 0.1);
+        `}
     
     &:hover {
         color: ${({ theme }) => theme.colors.accent1.dark};
         border: 1px solid ${({ theme }) => theme.colors.neutral.extraLight};
-    }
-
-    &:active {
-        color: ${({ theme }) => theme.colors.accent1.dark};
-        border: 1px solid ${({ theme }) => theme.colors.accent1.dark};
-        background: rgba(0, 191, 193, 0.5);
     }
 `;

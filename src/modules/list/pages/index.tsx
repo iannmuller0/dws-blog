@@ -54,6 +54,37 @@ const List = () => {
 		[postList],
 	);
 
+	const handleFilterChange = useCallback(
+		(categoryList: string[], authorList: string[]) => {
+			if (!postList) return;
+
+			const hasCategoryFilter = categoryList.length > 0;
+			const hasAuthorFilter = authorList.length > 0;
+
+			if (!hasCategoryFilter && !hasAuthorFilter) {
+				setPosts(postList);
+				return;
+			}
+
+			const filteredPosts = postList.filter((post: IPost) => {
+				const matchesCategories = hasCategoryFilter
+					? post.categories.some((categorie) =>
+							categoryList.includes(categorie.id),
+						)
+					: false;
+
+				const matchesAuthor = hasAuthorFilter
+					? authorList.includes(post.author.id)
+					: false;
+
+				return matchesCategories || matchesAuthor;
+			});
+
+			setPosts(filteredPosts);
+		},
+		[postList],
+	);
+
 	return (
 		<>
 			<Header isExpanded={isExpanded}>
@@ -75,7 +106,11 @@ const List = () => {
 			/>
 			<FlexWrapper>
 				{!isMobile && (
-					<FilterCard categoryList={categoryList} authorList={authorList} />
+					<FilterCard
+						onFilterChange={handleFilterChange}
+						categoryList={categoryList}
+						authorList={authorList}
+					/>
 				)}
 				<Container>
 					{posts?.map((post: IPost) => (
