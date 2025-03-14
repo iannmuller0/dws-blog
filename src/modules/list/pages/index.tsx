@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Search } from "../../shared/components";
 import Card from "../../shared/components/card";
-import useGetPostList from "../../shared/services/useGetPostList";
 import useScreenSize from "../../shared/utils/useBreakpoint";
 import { Filter } from "../components/filter";
 import FilterCard from "../components/filter/filterCard";
@@ -16,27 +15,34 @@ import {
 	HeaderText,
 	Hr,
 } from "./list.styles";
+import { usePostsStore, usePostsActions } from "../../../store";
 
 const List = () => {
-	const { data: postList, isLoading, isError } = useGetPostList();
+	const { postsList, loading, error } = usePostsStore();
+	const { fetchPosts } = usePostsActions();
+
 	const { data: categoryList } = useGetCategoryList();
 	const { data: authorList } = useGetAuthorList();
 	const isMobile = useScreenSize();
 
 	const [isExpanded, setIsExpanded] = useState<boolean>(false);
-	const [posts, setPosts] = useState(postList);
+	const [posts, setPosts] = useState(postsList);
 
 	//adicionar suspense e tratamento de erro
-	console.log(isLoading, isError);
+	console.log(loading, error);
 
 	useEffect(() => {
-		setPosts(postList);
-	}, [postList]);
+		fetchPosts();
+	  }, [fetchPosts]);
+
+	useEffect(() => {
+		setPosts(postsList);
+	}, [postsList]);
 
 	//adicionar tela not found
 	const handleSearch = (value: string) => {
 		const searchTerm = value.toLowerCase().trim();
-		const filteredList = postList.filter((post: IPost) =>
+		const filteredList = postsList.filter((post: IPost) =>
 			post.title.toLowerCase().includes(searchTerm),
 		);
 		setPosts(filteredList);
@@ -44,29 +50,29 @@ const List = () => {
 
 	const handleSort = useCallback(
 		(oldest: boolean) => {
-			return [...postList].sort((a, b) => {
+			return [...postsList].sort((a, b) => {
 				const dateA = new Date(a.createdAt).getTime();
 				const dateB = new Date(b.createdAt).getTime();
 
 				return oldest ? dateA - dateB : dateB - dateA;
 			});
 		},
-		[postList],
+		[postsList],
 	);
 
 	const handleFilterChange = useCallback(
 		(categoryList: string[], authorList: string[]) => {
-			if (!postList) return;
+			if (!postsList) return;
 
 			const hasCategoryFilter = categoryList.length > 0;
 			const hasAuthorFilter = authorList.length > 0;
 
 			if (!hasCategoryFilter && !hasAuthorFilter) {
-				setPosts(postList);
+				setPosts(postsList);
 				return;
 			}
 
-			const filteredPosts = postList.filter((post: IPost) => {
+			const filteredPosts = postsList.filter((post: IPost) => {
 				const categoryMatch = hasCategoryFilter
 					? post.categories.some((category) =>
 							categoryList.includes(category.id),
@@ -81,7 +87,7 @@ const List = () => {
 
 			setPosts(filteredPosts);
 		},
-		[postList],
+		[postsList],
 	);
 
 	return (
