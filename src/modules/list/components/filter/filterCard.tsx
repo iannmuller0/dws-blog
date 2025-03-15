@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
+import { PrimaryButton } from "../../../shared/components";
 import { Card, Hr, Item, SubTitle, Title } from "./filter.styles";
 import type { IFilter } from "./interface";
-import { PrimaryButton } from "../../../shared/components";
 
 const FilterCard = ({ categoryList, authorList, onFilterChange }: IFilter) => {
 	const [selectedCategories, setSelectedCategories] = useState<Array<string>>(
@@ -57,7 +57,13 @@ const FilterCard = ({ categoryList, authorList, onFilterChange }: IFilter) => {
 			<Title>Filters</Title>
 			{renderList(categoryList, "Category", selectedCategories)}
 			{renderList(authorList, "Author", selectedAuthors)}
-			<PrimaryButton onClick={() => {onFilterChange?.(selectedCategories, selectedAuthors)}}>Apply filters</PrimaryButton>
+			<PrimaryButton
+				onClick={() => {
+					onFilterChange?.(selectedCategories, selectedAuthors);
+				}}
+			>
+				Apply filters
+			</PrimaryButton>
 		</Card>
 	);
 };

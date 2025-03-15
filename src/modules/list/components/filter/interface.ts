@@ -4,8 +4,5 @@ export interface IFilter {
 	categoryList?: { name: string; id: string; onClick: () => void }[];
 	authorList?: { name: string; id: string; onClick: () => void }[];
 	handleSort?: (oldest: boolean) => IPost[];
-	onFilterChange?: (
-		categoryList: string[],
-		authorList: string[],
-	) => void;
+	onFilterChange?: (categoryList: string[], authorList: string[]) => void;
 }

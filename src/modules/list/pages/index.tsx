@@ -1,18 +1,16 @@
 import { useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { usePostsStore } from "../../../store";
+import { usePostsActions } from "../../../store/hooks";
 import Card from "../../shared/components/card";
+import Header from "../../shared/components/header";
 import useScreenSize from "../../shared/utils/useBreakpoint";
 import { Filter } from "../components/filter";
 import FilterCard from "../components/filter/filterCard";
 import useGetAuthorList from "../services/authorList/useGetAuthorList";
 import useGetCategoryList from "../services/useGetCategoryList";
 import type { IPost } from "./interface";
-import {
-	Container,
-	FlexWrapper,
-} from "./list.styles";
-import { usePostsStore, usePostsActions } from "../../../store";
-import Header from "../../shared/components/header";
-import { useNavigate } from "react-router-dom";
+import { Container, FlexWrapper } from "./list.styles";
 
 const List = () => {
 	const { postsList, loading, error } = usePostsStore();
@@ -68,8 +66,8 @@ const List = () => {
 			const filteredPosts = postsList.filter((post: IPost) => {
 				const categoryMatch = hasCategoryFilter
 					? post.categories.some((category) =>
-						categoryList.includes(category.id),
-					)
+							categoryList.includes(category.id),
+						)
 					: true;
 
 				const authorMatch = hasAuthorFilter
@@ -86,7 +84,7 @@ const List = () => {
 	const handleClick = (itemId: string) => {
 		navigate(`/details/${itemId}`);
 	};
-	
+
 	//adicionar suspense e tratamento de erro
 	if (loading) return <div>Carregando...</div>;
 	if (error) return <div>Erro: {error}</div>;

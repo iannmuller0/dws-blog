@@ -2,8 +2,8 @@ import styled from "styled-components";
 import convertPXToREM from "../../../shared/utils/convertPxToRem";
 
 interface ITypography {
-    color?: string,
-    weight?: number,
+	color?: string;
+	weight?: number;
 }
 
 export const Wrapper = styled.div`
@@ -29,7 +29,7 @@ export const TextWrapper = styled.div`
 `;
 
 export const Typography = styled.span<ITypography>`
-    color: ${({ color, theme }) => color === 'extraDark' ? theme.colors.neutral.extraDark : theme.colors.neutral.darkest};
+    color: ${({ color, theme }) => (color === "extraDark" ? theme.colors.neutral.extraDark : theme.colors.neutral.darkest)};
     font-size: ${convertPXToREM(14)};
     font-weight: ${({ weight }) => weight};
     margin-top: 4px

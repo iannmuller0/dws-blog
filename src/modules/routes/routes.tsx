@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const ListPage = lazy(
 	() => import(/* webpackChunkName: "list" */ "../list/pages"),

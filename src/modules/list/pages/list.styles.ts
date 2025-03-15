@@ -8,7 +8,7 @@ interface IconHeader {
 export const Header = styled.div<IconHeader>`
     display: flex;
     align-items: baseline;
-    margin: 8px 0;
+    margin: 8px 0 0 0;
 
     @media (min-width: 1024px) {
         width: 100%;

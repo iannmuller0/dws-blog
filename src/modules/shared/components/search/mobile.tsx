@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react"; // Adicionar useEffect
+import { useEffect, useRef, useState } from "react"; // Adicionar useEffect
 import type React from "react";
 import SvgSearch from "../../../../assets/icons/search";
 import type { ISearchMobProps } from "./interface";
