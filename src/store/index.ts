@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { useShallow } from 'zustand/shallow';
 import type { IPost } from '../modules/list/pages/interface';
 import { PostsService } from '../modules/shared/services/PostsService';
 
@@ -16,7 +17,8 @@ export const usePostsStore = create<PostsState>((set) => ({
   postsList: [],
   loading: false,
   error: null,
-  
+
+
   actions: {
     fetchPosts: async () => {
       set({ loading: true, error: null });
@@ -24,13 +26,15 @@ export const usePostsStore = create<PostsState>((set) => ({
         const postsList = await PostsService.fetchPosts();
         set({ postsList, loading: false });
       } catch (error) {
-        const message = error instanceof Error ? error.message : 'Erro desconhecido';
+        const message = error instanceof Error ? error.message : 'error';
         set({ error: message, loading: false });
       }
     },
-    
+
     setPosts: (newPosts) => set({ postsList: newPosts })
   }
 }));
 
 export const usePostsActions = () => usePostsStore((state) => state.actions);
+export const useLastPosts = () => 
+  usePostsStore(useShallow((state) => state.postsList.slice(0, 3)));
