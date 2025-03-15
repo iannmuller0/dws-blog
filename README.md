@@ -1,54 +1,31 @@
-# React + TypeScript + Vite
+# DWS Blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Desenvolvido com React, Vite e TypeScript.
 
-Currently, two official plugins are available:
+## 📋 Pré-requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Certifique-se de ter instalado em sua máquina:
+- [Node.js](https://nodejs.org/) (versão 18.x ou superior)
+- [npm](https://www.npmjs.com/) (versão 9.x ou superior)
+- [Git](https://git-scm.com/) (para clonar o repositório)
 
-## Expanding the ESLint configuration
+## 🚀 Execução Local
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Siga estes passos para rodar o projeto:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 1. Clonar o Repositório
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+git clone https://github.com/iannmuller0/dws-blog
+cd dws-blog
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 2. Instalar Dependências
+npm install
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### 3. Iniciar Servidor de Desenvolvimento
+npm run dev
+
+### 3. Acessar a Aplicação
+http://localhost:5173
+
+O projeto utiliza:
+Biome: Para formatação automática e Linter (recomenda-se a instalação do plugin em seu editor)
