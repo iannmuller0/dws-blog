@@ -24,9 +24,6 @@ const List = () => {
 	const isMobile = useScreenSize();
 	const [posts, setPosts] = useState(postsList);
 
-	//adicionar suspense e tratamento de erro
-	console.log(loading, error);
-
 	useEffect(() => {
 		fetchPosts();
 	}, [fetchPosts]);
@@ -89,6 +86,10 @@ const List = () => {
 	const handleClick = (itemId: string) => {
 		navigate(`/details/${itemId}`);
 	};
+	
+	//adicionar suspense e tratamento de erro
+	if (loading) return <div>Carregando...</div>;
+	if (error) return <div>Erro: {error}</div>;
 
 	return (
 		<>
