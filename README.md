@@ -16,6 +16,7 @@ Siga estes passos para rodar o projeto:
 ### 1. Clonar o Repositório
 
 git clone https://github.com/iannmuller0/dws-blog
+
 cd dws-blog
 
 ### 2. Instalar Dependências
