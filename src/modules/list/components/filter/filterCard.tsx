@@ -1,7 +1,8 @@
 import { useCallback, useState } from "react";
 import { PrimaryButton } from "../../../shared/components";
-import { Card, Hr, Item, SubTitle, Title } from "./filter.styles";
+import { Card, FilterWrapper, Hr, Item, SubTitle, Title } from "./filter.styles";
 import type { IFilter } from "./interface";
+import SvgFilter from "../../../../assets/icons/filter";
 
 const FilterCard = ({ categoryList, authorList, onFilterChange }: IFilter) => {
 	const [selectedCategories, setSelectedCategories] = useState<Array<string>>(
@@ -54,7 +55,10 @@ const FilterCard = ({ categoryList, authorList, onFilterChange }: IFilter) => {
 
 	return (
 		<Card>
-			<Title>Filters</Title>
+			<FilterWrapper>
+				<SvgFilter />
+				<Title>Filters</Title>
+			</FilterWrapper>
 			{renderList(categoryList, "Category", selectedCategories)}
 			{renderList(authorList, "Author", selectedAuthors)}
 			<PrimaryButton

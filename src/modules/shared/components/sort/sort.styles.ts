@@ -5,9 +5,15 @@ export const Sort = styled.button`
     border-radius: 24px;
     background: unset;
     padding: 8px;
+    display: flex;
+    min-width: fit-content;
 
-    svg: {
-        color: ${({ theme }) => theme.colors.accent1.medium};
+    span {
+        margin-right: 4px;
+    }
+
+    svg {
+        fill: ${({ theme }) => theme.colors.accent1.medium};
     }
 
     &:hover {
@@ -15,7 +21,7 @@ export const Sort = styled.button`
         background: ${({ theme }) => theme.colors.accent1.medium};
 
         svg {
-            color: ${({ theme }) => theme.colors.neutral.extraLight};
+            fill: ${({ theme }) => theme.colors.neutral.extraLight};
         }
 
     }

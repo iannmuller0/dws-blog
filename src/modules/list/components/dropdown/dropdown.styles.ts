@@ -36,7 +36,7 @@ export const Header = styled.button`
     row-gap: 4px;
     justify-content: center;
     position: relative;
-    margin: 0 6px;
+    margin: 0 4px;
 
     div {
         display: flex;

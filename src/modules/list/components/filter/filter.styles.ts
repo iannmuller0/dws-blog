@@ -5,6 +5,7 @@ export const SortText = styled.span`
     color: ${({ theme }) => theme.colors.neutral.extraDark};
     font-weight: bold;
     font-size: ${convertPXToREM(14)};
+    margin-right: 2px;
 `;
 
 export const Blog = styled.h2`
@@ -37,7 +38,7 @@ export const Card = styled.div`
 export const Title = styled.h3`
     font-size: ${convertPXToREM(20)};
     font-weight: 700;
-    margin: 0;
+    margin: 0 0 0 16px;
 `;
 
 export const SubTitle = styled.span`
@@ -67,4 +68,9 @@ export const Item = styled.div<{ selected?: boolean }>`
         color: ${({ theme }) => theme.colors.accent1.dark};
         border: 1px solid ${({ theme }) => theme.colors.neutral.extraLight};
     }
+`;
+
+export const FilterWrapper = styled.div`
+    display: flex;
+    align-items: center;
 `;
