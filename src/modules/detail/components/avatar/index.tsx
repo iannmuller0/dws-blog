@@ -4,11 +4,11 @@ import removeName from '../../../shared/utils/removeName';
 import { Wrapper, Image, TextWrapper, Typography } from './avatar.styles';
 
 interface IAvatar {
-    src: string,
-    name: string,
-    date: string,
+    src: string | undefined,
+    name: string | undefined,
+    date: string | undefined,
 }
-
+//fiz ts issue
 const Avatar = ({ src, name, date }: IAvatar) => {
     return (
         <>

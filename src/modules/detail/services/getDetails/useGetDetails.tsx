@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { IData } from "../../pages/interface";
 
 const useGetDetails = (id?: string) => {
-    const [data, setData] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [isError, setIsError] = useState(false);
+    const [data, setData] = useState<IData | null>(null);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [isError, setIsError] = useState<boolean>(false);
 
     useEffect(() => {
         const fetchData = async () => {
