@@ -39,3 +39,13 @@ export const Container = styled.div`
 		padding: 0 240px;
 	}
 `;
+
+export const Content = styled.p`
+    margin-bottom: 32px;
+    font-size: ${convertPXToREM(14)};
+    white-space: pre-line;
+
+    @media (min-width: 1024px) {
+        margin-bottom: 46px;
+	}
+`;

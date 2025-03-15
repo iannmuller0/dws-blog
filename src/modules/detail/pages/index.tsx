@@ -2,9 +2,11 @@ import { useNavigate, useParams } from "react-router-dom";
 import { SecondaryButton } from "../../shared/components";
 import Header from "../../shared/components/header";
 import useGetDetails from "../services/getDetails/useGetDetails";
-import { AuthorWrapper, ImgWrapper, Title, Container } from "./details.styles";
+import { AuthorWrapper, ImgWrapper, Title, Container, Content } from "./details.styles";
 import Avatar from "../components/avatar";
 import { IDetails } from "./interface";
+import { Hr } from "../../list/pages/list.styles";
+import LatestPosts from "../components/latestPosts";
 
 
 const Details = () => {
@@ -24,7 +26,9 @@ const Details = () => {
                 <ImgWrapper>
                     <img height={150} alt="post" src={details?.thumbnail_url} />
                 </ImgWrapper>
-                <span>{details?.content}</span>
+                <Content>{details?.content}</Content>
+                <Hr />
+                <LatestPosts />
             </Container>
         </>
     );

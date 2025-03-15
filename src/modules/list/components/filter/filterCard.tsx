@@ -55,7 +55,6 @@ const FilterCard = ({ categoryList, authorList, onFilterChange }: IFilter) => {
 	return (
 		<Card>
 			<Title>Filters</Title>
-			<SubTitle>Category</SubTitle>
 			{renderList(categoryList, "Category", selectedCategories)}
 			{renderList(authorList, "Author", selectedAuthors)}
 			<PrimaryButton onClick={() => {onFilterChange?.(selectedCategories, selectedAuthors)}}>Apply filters</PrimaryButton>
