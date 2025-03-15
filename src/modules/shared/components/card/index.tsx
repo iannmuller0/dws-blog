@@ -19,11 +19,12 @@ const Card = ({
 	date,
 	autorName,
 	categories,
+	onClick,
 }: ICard) => {
 	const validDate = new Date(date);
 
 	return (
-		<Wrapper>
+		<Wrapper onClick={onClick}>
 			<img height={196} alt="post" src={img} />
 			<Container>
 				<Info>{format(validDate, "MMM dd, yyyy", { locale: ptBR })}</Info>

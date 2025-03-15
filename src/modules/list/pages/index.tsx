@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from "react";
-import { Search } from "../../shared/components";
 import Card from "../../shared/components/card";
 import useScreenSize from "../../shared/utils/useBreakpoint";
 import { Filter } from "../components/filter";
@@ -10,22 +9,19 @@ import type { IPost } from "./interface";
 import {
 	Container,
 	FlexWrapper,
-	H2,
-	Header,
-	HeaderText,
-	Hr,
 } from "./list.styles";
 import { usePostsStore, usePostsActions } from "../../../store";
+import Header from "../../shared/components/header";
+import { useNavigate } from "react-router-dom";
 
 const List = () => {
 	const { postsList, loading, error } = usePostsStore();
 	const { fetchPosts } = usePostsActions();
+	const navigate = useNavigate();
 
 	const { data: categoryList } = useGetCategoryList();
 	const { data: authorList } = useGetAuthorList();
 	const isMobile = useScreenSize();
-
-	const [isExpanded, setIsExpanded] = useState<boolean>(false);
 	const [posts, setPosts] = useState(postsList);
 
 	//adicionar suspense e tratamento de erro
@@ -33,7 +29,7 @@ const List = () => {
 
 	useEffect(() => {
 		fetchPosts();
-	  }, [fetchPosts]);
+	}, [fetchPosts]);
 
 	useEffect(() => {
 		setPosts(postsList);
@@ -75,8 +71,8 @@ const List = () => {
 			const filteredPosts = postsList.filter((post: IPost) => {
 				const categoryMatch = hasCategoryFilter
 					? post.categories.some((category) =>
-							categoryList.includes(category.id),
-						)
+						categoryList.includes(category.id),
+					)
 					: true;
 
 				const authorMatch = hasAuthorFilter
@@ -90,20 +86,13 @@ const List = () => {
 		[postsList],
 	);
 
+	const handleClick = (itemId: string) => {
+		navigate(`/details/${itemId}`);
+	};
+
 	return (
 		<>
-			<Header isExpanded={isExpanded}>
-				<HeaderText isExpanded={isExpanded}>
-					<h1>dentsu</h1>
-					<H2>world services</H2>
-				</HeaderText>
-				<Search
-					isExpanded={isExpanded}
-					setIsExpanded={setIsExpanded}
-					onSearch={handleSearch}
-				/>
-			</Header>
-			<Hr />
+			<Header handleSearch={handleSearch} />
 			<Filter
 				handleSort={handleSort}
 				categoryList={categoryList}
@@ -120,6 +109,7 @@ const List = () => {
 				<Container>
 					{posts?.map((post: IPost) => (
 						<Card
+							onClick={() => handleClick(post.id)}
 							key={post.id}
 							img={post.thumbnail_url}
 							title={post.title}

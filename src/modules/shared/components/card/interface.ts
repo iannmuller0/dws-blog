@@ -4,6 +4,7 @@ export interface ICard {
 	description: string;
 	date: string;
 	autorName: string;
+	onClick: () => void;
 	categories: [
 		{
 			createdAt: string;
